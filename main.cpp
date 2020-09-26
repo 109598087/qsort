@@ -16,24 +16,26 @@ int ppartition(double * nums_begin, double * nums_end, int low, int high)
     {
         if(high_flag)
         {
-            if(nums_begin[high]<pivot)
+            if(nums_begin[high]<pivot) /////////////////////////////////
             {
                 nums_begin[low] = nums_begin[high];
                 high_flag = false;
                 low_flag = true;
-            }else
+            }
+            else
             {
                 high -= 1;
             }
         }
         if(low_flag)
         {
-            if(nums_begin[low]>pivot)
+            if(nums_begin[low]>pivot) /////////////////////////////////
             {
                 nums_begin[high] = nums_begin[low];
                 high_flag = true;
                 low_flag = false;
-            }else
+            }
+            else
             {
                 low += 1;
             }
@@ -61,7 +63,8 @@ double * qsort(double * nums_begin, double * nums_end)
             arr.push_back(mid + 1);
             arr.push_back(high);
         }
-        while(!arr.empty()){
+        while(!arr.empty())
+        {
             int r = arr.back();
             arr.pop_back();
             int l = arr.back();
@@ -90,7 +93,7 @@ int main()
     array <double, 7> nums1 = {2, 1, 5, 8, 10, 7, 3};
     qsort(nums1.begin(), nums1.end());
     int i;
-    for(i=0;i<nums1.end()-nums1.begin();i++)
+    for(i=0; i<nums1.end()-nums1.begin(); i++)
     {
         cout << nums1[i] << endl;
     }
